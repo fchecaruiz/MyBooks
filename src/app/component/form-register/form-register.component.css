@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Monserrat",sans-serif;
+}
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form div{
+    border: 0px solid black;
+    width: 50%;
+    height: 100%;
+}
+.boton{
+    margin:15px;
+    margin-top: 15px;
+    color:white;
+    background-color: green;
+    width: 100%;
+}
+.boton2{
+    margin-left: 50px;
+}
+input {
+    width: 300px; 
+}
+.titulo{
+    margin-left:-16px;
+    color:green;
+    font-weight: bold; 
+    font-size: 24px;
+}
+
+
+
+
+

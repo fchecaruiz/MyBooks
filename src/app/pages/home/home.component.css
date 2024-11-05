@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Monserrat",sans-serif;
+}
+div{
+    height: 85vh;
+    border:4px;
+    color:red;
+    background-color: black;
+    text-align: center;
+    font-size: 40px;
+    display:flex;
+    flex-direction: column;
+    justify-content:space-around;
+   
+
+
+
+}
