@@ -4,7 +4,9 @@
     margin: 0;
     font-family: "Monserrat",sans-serif;
 }
-div{
+
+
+.general{
     height: 85vh;
     border:4px;
     color:red;
@@ -14,8 +16,4 @@ div{
     display:flex;
     flex-direction: column;
     justify-content:space-around;
-   
-
-
-
 }
