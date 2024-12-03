@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <div class = "caja_principal">
+            <ul>
+                 <p *ngIf="books.length == 0">NO EXISTEN LIBROS</p> 
+                  <li *ngFor = "let book of books;let esPar = even">
+                       <div>
+                       <img [src]="book.photo" class="imagenes" alt="Imagen del libro">
+                       </div> 
+                       <p> Codigo del libro : {{book.id_book}}</p>
+                       <p> Id de usuario : {{book.id_user}}</p>
+                       <p> Tipo : {{book.type}}</p>
+                       <p> Autor : {{book.author}}</p>
+                       <p> Precio : {{book.price}}</p>
+                       <button class = "boton-compra" [ngClass]="esPar ? 'btn-pares' : 'btn-impar'">Comprar</button>
+                  </li>
+            </ul>
+           
+            <form class="caja-formulario" >
+                   <div>
+                       <label for="id_book">Código del Libro</label>
+                       <input type="number" id="id_book" #id_book placeholder="Código del libro" required>
+                    </div>
+                    
+                    <div>
+                        <label for="id_user">Id Usuario</label>
+                        <input type="number"id="id_user" #id_user placeholder="Identificacion Usuario" required>
+                    </div>
+            
+                    <div>
+                         <label for="type">Tipo</label>
+                         <input type="text" id="type" #type placeholder="Indica el tipo" required>
+                    </div>
+            
+                    <div>
+                          <label for="author">Autor</label>
+                          <input type="text" id="author" #author placeholder="Indica el Autor" required>
+                    </div>
+            
+                    <div>
+                          <label for="price">Precio</label>
+                          <input type="number" id="price" #price placeholder="Introduce el precio" required>
+                    </div>
+
+                    <div>
+                          <label for="photo">Foto, imagen</label>
+                          <input type ="text" id="photo" placeholder="Ubicacion imagen" required>
+                    </div>
+            
+                    <div class="boton">
+                          <button type="submit">Registrar</button>
+                    </div>
+            </form>
+        </div>
+
+
+
+</body>
+</html>

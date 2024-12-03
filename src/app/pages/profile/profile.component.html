@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+<div class="caja">
+    <!-- Tarjeta 1 -->
+    <div class="container1">
+      <img src="assets/nando.jpg" alt="nando.jpg">
+      <h5 class="titulo1-carta">{{usuario.name}} {{usuario.last_name}}</h5>
+      <div class="datos">
+        <div class="recuadro">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" [(ngModel)]="usuario.name" placeholder="Escribe tu nombre" required>
+        </div>
+  
+        <div class="recuadro">
+          <label for="apellidos">Apellidos</label>
+          <input type="text" id="apellidos" [(ngModel)]="usuario.last_name" placeholder="Escribe tus apellidos" required>
+        </div>
+  
+        <div class="recuadro">
+          <label for="correo">Correo</label>
+          <input type="email" id="correo" [(ngModel)]="usuario.email" placeholder="Escribe tu correo" required>
+        </div>
+  
+        <!--<div class="recuadro">
+          <label for="url">URL</label>
+          <input type="url" id="url" [(ngModel)]="usuario.url" placeholder="Escribe tu URL" required>
+        </div>-->
+      </div>
+    </div>
+  
+    <!-- Tarjeta 2-->
+    <div class="container2">
+      <h5 class="titulo2-carta">Editar datos</h5><br>
+      <form (ngSubmit)="modificarDatos()">
+        <div class="datos-form">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" [(ngModel)]="usuario.name" name="nombre" placeholder="Nombre" required>
+        </div>
+  
+        <div class="datos-form">
+          <label for="apellidos">Apellidos</label>
+          <input type="text" id="apellidos" [(ngModel)]="usuario.last_name" name="apellidos" placeholder="Apellidos" required>
+        </div>
+  
+        <div class="datos-form">
+          <label for="emailInput">Correo</label>
+          <input type="email" id="emailInput" [(ngModel)]="usuario.email" name="email" placeholder="Escribe tu email" required>
+        </div>
+  
+        <div class="datos-form">
+          <label for="urlInput">URL</label>
+          <input type="url" id="urlInput" [(ngModel)]="usuario.url" name="url" placeholder="Escribe tu URL" required>
+        </div>
+  
+        <button class="boton" type="submit">Modificar</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+  

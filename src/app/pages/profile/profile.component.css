@@ -1,0 +1,85 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+}
+.caja {
+  flex: 1;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(213, 205, 233);
+  padding: 20px;
+}
+.contenedor1, .container2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+    width: 100%;
+    max-width: 400px; /* Limita el ancho máximo de las tarjetas */
+    box-sizing: border-box;
+}
+
+img{
+    padding:0px;
+    margin-left:50px;
+    width: 100%;
+    max-width: 200px;
+    height:auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.titulo1-carta, .titulo2-carta {
+    color: blue;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 10px;
+    word-wrap: break-word;
+  }
+
+.datos{
+    font-size: 18px;
+    color:rgb(43, 49, 226);
+    text-decoration:solid;
+    text-align: center;
+    margin-top:0px
+}
+.recuadro{
+    margin-bottom: 15px;
+}
+
+.recuadro label, .datos-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .recuadro input, .datos-form input {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid violet;
+    border-radius: 5px;
+    background-color: rgb(232, 215, 215);
+    font-size: 15px;
+  }
+
+
+.boton {
+    color: white;
+    background-color: blueviolet;
+    font-size: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    width: 100%;
+    cursor: pointer;
+  }
