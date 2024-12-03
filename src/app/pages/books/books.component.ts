@@ -15,10 +15,30 @@ export class BooksComponent {
     new Book(3, 102, "Reflexión", "Enrique Soto Castro", 14.00, "./assets/Vivir en el Asombro.jpg"),
     new Book(4, 103, "Terror","Agustin Rioja Martinez", 24.00, "./assets/Alax de Onix.jpg")
    ];
+    
+   
+   libro:Book = new Book (0,0,"","",0,"");
 
-     libro:Book;
+   agregarLibro(id_book: any, id_user: any, type: string, author: string, price: any, photo: string): void {
+    this.libro.id_book = id_book;
+    this.libro.id_user = id_user;
+    this.libro.type = type;
+    this.libro.author = author;
+    this.libro.price = price;
+    this.libro.photo = photo;
 
-   capturarInputs(){
+  
+    this.books.push(this.libro);//añado los datos de los inputs al array books
 
-   }
+   
+    this.libro = new Book(0, 0, "", "", 0, "");// reset despues de meter un libro.Pongo .this, porque si no lo pongo escribiria libro = (seria una variable)
   }
+  resetFormulario(form: any){
+    form.reset();  // Resetea todo el formulario a su estado inicial
+  }
+}
+        
+      
+
+      
+  

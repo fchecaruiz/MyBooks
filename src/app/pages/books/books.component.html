@@ -13,7 +13,7 @@
                        <div>
                        <img [src]="book.photo" class="imagenes" alt="Imagen del libro">
                        </div> 
-                       <p> Codigo del libro : {{book.id_book}}</p>
+                       <p> Codigo del libro : {{book.id_book| refCode}}</p>
                        <p> Id de usuario : {{book.id_user}}</p>
                        <p> Tipo : {{book.type}}</p>
                        <p> Autor : {{book.author}}</p>
@@ -22,7 +22,7 @@
                   </li>
             </ul>
            
-            <form class="caja-formulario" >
+            <form class="caja-formulario" (submit)="agregarLibro(id_book.value, id_user.value, type.value, author.value, price.value, photo.value)">
                    <div>
                        <label for="id_book">Código del Libro</label>
                        <input type="number" id="id_book" #id_book placeholder="Código del libro" required>
@@ -50,11 +50,11 @@
 
                     <div>
                           <label for="photo">Foto, imagen</label>
-                          <input type ="text" id="photo" placeholder="Ubicacion imagen" required>
+                          <input type ="text" id="photo" #photo placeholder="Ubicacion imagen" required>
                     </div>
             
                     <div class="boton">
-                          <button type="submit" (click)="capturarInputs()">Registrar</button>
+                          <button type="submit">Registrar</button>
                     </div>
             </form>
         </div>

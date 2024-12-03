@@ -11,6 +11,9 @@ import { RegisterComponent } from './pages/pages/register/register.component';
 import { FormsModule } from '@angular/forms';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { BooksComponent } from './pages/books/books.component';
+import { RefCodePipe } from './pipe/ref-code.pipe';
+
+
 
 
 
@@ -24,6 +27,9 @@ import { BooksComponent } from './pages/books/books.component';
     RegisterComponent,
     ProfileComponent,
     BooksComponent,
+    RefCodePipe,
+   
+    
   ],
   imports: [
     BrowserModule,
