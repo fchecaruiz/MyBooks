@@ -16,4 +16,9 @@ export class BooksComponent {
     new Book(4, 103, "Terror","Agustin Rioja Martinez", 24.00, "./assets/Alax de Onix.jpg")
    ];
 
+     libro:Book;
+
+   capturarInputs(){
+
+   }
   }
