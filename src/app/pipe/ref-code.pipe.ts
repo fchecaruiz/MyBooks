@@ -7,7 +7,7 @@ export class RefCodePipe implements PipeTransform {
 
   transform(value: string):string{
     let resultado:string;
-    resultado = "Ref-301020" + value
+    resultado = "Ref-" + value
     return resultado
   }
 

@@ -46,7 +46,7 @@ li {
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 20px;
-    width: 200px; 
+    width: 300px; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -71,7 +71,7 @@ li {
     font-size: 16px;
     padding: 10px;
     margin-top: 10px;
-    width: 100%;
+    width: 50%;
 }
 
 .btn-pares {
@@ -84,27 +84,48 @@ li {
 
 .caja-formulario {
     display: flex;  
-    justify-content:space-between; 
-    gap: 10px; 
-    padding: 30px;
-    width: 100%; 
-    flex-wrap: wrap; 
-    box-sizing: border-box;
+    flex-direction: column;
+    justify-content:center; 
     align-items: center;
+    gap: 10px; 
+    /* padding: 60px; */
+    width: 100%; 
+    height:75vh;
+
+}
+    
+
+.form-group {
+    display:flex;
+    flex-direction: column;
+    align-items: center; 
+    width:100%;
+    gap:10px;
+    font-size: 15px;
+}
+.form-grupo label {
+    text-align: center;
+    width: 100%; 
+    font-size: 20px;
+}  
+
+.input{
+    width: 50vh;
+    height: 25px;
+    padding:5px;
+    border-radius: 7px;
 }
 
-.caja-formulario input {
+.textos{
     width: 100%;
-    height: 20px;
-    padding:0.5px;
-    margin-top:0px;
-    margin:0px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+
 }
 
 .caja-formulario .boton button {
-    width:100%;
+    width:20%;
     padding: 6px;
     margin:10px;
     background-color: rgb(166, 23, 182);
@@ -114,7 +135,7 @@ li {
     font-size: 18px;
 }
 .boton{
-    width:100%;
+    width:60%;
     display:flex;
     justify-content: center;
 }
