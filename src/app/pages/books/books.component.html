@@ -6,8 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-        <div class = "caja_principal">
-            <ul>
+        <div class = "caja_principal"> 
+            
+                  <ul>
+                    <p *ngIf="books.length == 0">NO EXISTEN LIBROS</p>
+                    <li *ngFor="let book of books;let i = index; let esPar = even">
+                      <app-card [book_libro]="book" [esPar_color]="esPar" (eliminarX)="eliminarLibro(i)"></app-card>
+                    </li>
+                  </ul>
+                  <!--book:libro y esPar_color la igualo a iteradora book-->
+            
+            
+            <!-- <ul>
                  <p *ngIf="books.length == 0">NO EXISTEN LIBROS</p> 
                   <li *ngFor = "let book of books;let esPar = even">
                        <div>
@@ -21,7 +31,7 @@
                        <p> Precio : {{book.price}}</p>
                        <button class = "boton-compra" [ngClass]="esPar ? 'btn-pares' : 'btn-impar'">Comprar</button>
                   </li>
-            </ul>
+            </ul> -->
            
             <form class="caja-formulario" (submit)="agregarLibro(id_book.value, id_user.value,title.value, type.value, author.value, price.value, photo.value)">
                    <div class="form-grupo">

@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { BooksComponent } from './pages/books/books.component';
 import { RefCodePipe } from './pipe/ref-code.pipe';
+import { CardComponent } from './components/card/card.component';
 
 
 
@@ -28,6 +29,7 @@ import { RefCodePipe } from './pipe/ref-code.pipe';
     ProfileComponent,
     BooksComponent,
     RefCodePipe,
+    CardComponent,
    
     
   ],

@@ -10,7 +10,7 @@ export class BooksComponent {
 
   public books : Book[]= [
     
-    new Book(1, 100,"La isla de la mujer Dormida","Ficción", "Arturo Perez Reverte", 21.00, "./assets/La isla de la mujer Dormida.jpg"),
+    new Book(1, 100,"La isla de la mujer","Ficción", "Arturo Perez Reverte", 21.00, "./assets/La isla de la mujer Dormida.jpg"),
     new Book(2, 101,"Victoria","Romántico", "Paloma Sanchez Garnica", 24.00, "./assets/Victoria.jpg"),
     new Book(3, 102, "Vivir en el Asombro","Reflexión", "Enrique Soto Castro", 14.00, "./assets/Vivir en el Asombro.jpg"),
     new Book(4, 103, "Alax de Onix","Terror","Agustin Rioja Martinez", 24.00, "./assets/Alax de Onix.jpg")
@@ -37,8 +37,12 @@ export class BooksComponent {
   resetFormulario(form: any){
     form.reset();  // Resetea todo el formulario a su estado inicial
   }
+
+  eliminarLibro(index: number) {
+    this.books.splice(index, 1);// eliminamos libro. Se elimina en indice indicado y solo un elemento. Asi funciona el splice()
 }
-        
+
+}
       
 
       
