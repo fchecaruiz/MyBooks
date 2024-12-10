@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -13,6 +12,10 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { BooksComponent } from './pages/books/books.component';
 import { RefCodePipe } from './pipe/ref-code.pipe';
 import { CardComponent } from './components/card/card.component';
+import { AddBookComponent } from './pages/add-book/add-book.component';
+import { UpdateBookComponent } from './pages/pages/update-book/update-book.component';
+import { BooksService } from './shared/books.service';
+
 
 
 
@@ -30,6 +33,8 @@ import { CardComponent } from './components/card/card.component';
     BooksComponent,
     RefCodePipe,
     CardComponent,
+    AddBookComponent,
+    UpdateBookComponent,
    
     
   ],
@@ -38,7 +43,7 @@ import { CardComponent } from './components/card/card.component';
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [BooksService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,17 +7,25 @@
 </head>
 <body>
         <div class = "caja_principal"> 
+                <div class="buscador">
+                  <input class="recuadroBuscador" type="number" id="buscador" placeholder="Buscar libro" 
+                  [(ngModel)]="id_libro" (keyup.enter)="getOne()">
+                  <!-- <button (click)="getOne()">Buscar</button> -->
+                  <p *ngIf="libroEncontrado">{{libroEncontrado.title}} - {{libroEncontrado.author}}</p>
+                  <p *ngIf="!libroEncontrado && id_libro !== 0">Sin libros</p>
+                </div>
             
                   <ul>
                     <p *ngIf="books.length == 0">NO EXISTEN LIBROS</p>
                     <li *ngFor="let book of books;let i = index; let esPar = even">
-                      <app-card [book_libro]="book" [esPar_color]="esPar" (eliminarX)="eliminarLibro(i)"></app-card>
+                        <app-card [book_libro]="book" [esPar_color]="esPar" (eliminarX)="eliminarLibro($event)"></app-card>
+                      <!-- <app-card [book_libro]="book" [esPar_color]="esPar" (eliminarX)="eliminarLibro(i)"></app-card> -->
                     </li>
                   </ul>
                   <!--book:libro y esPar_color la igualo a iteradora book-->
             
             
-            <!-- <ul>
+            <!--<ul>
                  <p *ngIf="books.length == 0">NO EXISTEN LIBROS</p> 
                   <li *ngFor = "let book of books;let esPar = even">
                        <div>
@@ -33,7 +41,7 @@
                   </li>
             </ul> -->
            
-            <form class="caja-formulario" (submit)="agregarLibro(id_book.value, id_user.value,title.value, type.value, author.value, price.value, photo.value)">
+           <!-- <form class="caja-formulario" (submit)="agregarLibro(id_book.value, id_user.value,title.value, type.value, author.value, price.value, photo.value)">
                    <div class="form-grupo">
                        <label class="textos" for="id_book">Código del Libro</label>
                        <input type="number" id="id_book" #id_book class="input" placeholder="Código del libro" required>
@@ -72,7 +80,7 @@
                     <div class="boton">
                           <button type="submit">Registrar</button>
                     </div>
-            </form>
+            </form> -->
       </div>
 
 
