@@ -1,4 +1,4 @@
-import { Component,Input,Output,EventEmitter } from '@angular/core';
+import { Component,Input,Output,EventEmitter, OnInit } from '@angular/core';
 import { BooksService } from 'src/app/shared/books.service';
 
 @Component({
@@ -11,13 +11,15 @@ export class CardComponent {
   constructor(public deleteCardX:BooksService){
   }
 
-  @Input() book_libro: any;
+  @Input() book_libro:any;
   @Input() esPar_color: any;
   @Output() eliminarX = new EventEmitter<number>(); 
+
 
   eliminarCard() {
     //this.eliminarX.emit(this.book_libro.id_book); 
     this.deleteCardX.delete(this.book_libro.id_book);
+
 
   }
 

@@ -9,7 +9,7 @@ export class BooksService {
 
  id_book: any = 0; //iniciar con valor cero para la busqueda del libro por ID_book
  libro_encontrado: boolean = true ; //hemos encotrado el libro
- 
+
 
   public books: Book[] = [
     new Book(1, 100, "La isla de la mujer", "Ficción", "Arturo Pérez Reverte", 21.00, "./assets/La isla de la mujer Dormida.jpg", "tapa dura"),
@@ -19,8 +19,7 @@ export class BooksService {
   ];
 
   constructor() { 
-   
-  }
+                } 
   
   getAll(): Book[]{
     return this.books;
@@ -39,11 +38,14 @@ export class BooksService {
 
   add(book: Book):void{
     this.books.push(book)
+    alert("Libro agregado con exito: " + book.title);
 }
+
+
 
   edit(book: Book): boolean {
     for (let i = 0; i < this.books.length; i++) {
-      if (this.books[i].id_book == book. id_book) {
+      if (this.books[i].id_book == book.id_book) {
         this.books[i] = book;
         return true; 
       }

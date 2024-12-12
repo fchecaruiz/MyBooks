@@ -7,31 +7,21 @@ import { Book } from 'src/models/book';
   templateUrl: './update-book.component.html',
   styleUrls: ['./update-book.component.css']
 })
+
 export class UpdateBookComponent {
 
-   constructor(public updateBook:BooksService){
+  book: Book = new Book(0, 0, '', '', '', 0, '', ''); // Instancia del objeto book
 
-   }
-   
-   edit(id_book: number, title: string, author: string, cover_class: string, price: number, photo: string): void {
+  constructor(private updateBook: BooksService) {}
 
-    let modificarLibro = new Book(
-      id_book, 
-      0,
-      title,  
-      cover_class,
-      author,  
-      price,   
-      photo,  
-      ""
-    );
+ 
+  edit(): void {//no necesito pasar parámetros individuales, porque el objeto book ya tiene el dato....
+                // con ngModels los datos entran directamente a la vez que los input del formulario
     
-    
-
-    if (this.updateBook.edit(modificarLibro)) {
+     if (this.updateBook.edit(this.book)) {
       alert("Libro actualizado!!!");
     } else {
-      alert("No se encuentra ningun libro");
+      alert("No se encontro ningun libro");
     }
-}
+  }
 }

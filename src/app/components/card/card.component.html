@@ -1,7 +1,7 @@
 <li>
     <button class="boton-eliminar moverX" (click)="eliminarCard()">X</button>
     <div>
-      <img [src]="book_libro.photo" class="imagenes" alt="Imagen del libro">
+      <img [src]= "book_libro.photo" class="imagenes" alt="Imagen del libro">
     </div>
     <p>Código del libro: {{ book_libro.id_book | refCode }}</p>
     <p>Id de usuario: {{ book_libro.id_user }}</p>
@@ -9,6 +9,7 @@
     <p>Tipo: {{ book_libro.type }}</p>
     <p>Autor: {{ book_libro.author }}</p>
     <p>Precio: {{ book_libro.price }}</p>
+    
     <button class="boton-compra" [ngClass]="esPar_color ? 'btn-pares' : 'btn-impar'">
       Comprar
     </button>
