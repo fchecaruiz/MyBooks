@@ -6,23 +6,59 @@
     <title>Document</title>
 </head>
 <body>
-        <div class = "caja_principal"> 
+       
+    <div class="caja_principal"> 
+        <div class="buscador">
+          <input class="recuadroBuscador" type="number" id="buscador" placeholder="Buscar libro" 
+                 [(ngModel)]="id_libro" (keyup.enter)="getOne()">
+        </div>
+      
+        <div *ngIf="libroEncontrado && id_libro !== 0" class="libroEncontrado">
+          <app-card [book_libro]="libroEncontrado" [esPar_color]="false" (eliminarX)="eliminarCard($event)"></app-card>                  
+        </div>
+        
+        <ul *ngIf="books.length > 0">
+          <p *ngIf="books.length == 0">NO EXISTEN LIBROS</p>
+          <li *ngFor="let book of books; let i = index; let esPar = even">
+            <app-card [book_libro]="book" [esPar_color]="esPar" (eliminarX)="eliminarCard($event)"></app-card>
+          </li>
+        </ul>
+    
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- <div class = "caja_principal"> 
+                
                 <div class="buscador">
                   <input class="recuadroBuscador" type="number" id="buscador" placeholder="Buscar libro" 
                   [(ngModel)]="id_libro" (keyup.enter)="getOne()">
-                  <!-- <button (click)="getOne()">Buscar</button> -->
-                  <p *ngIf="libroEncontrado">{{libroEncontrado.title}} - {{libroEncontrado.author}}</p>
-                  <p *ngIf="!libroEncontrado && id_libro !== 0">Sin libros</p>
                 </div>
-            
-                  <ul>
+
+                  <div *ngIf="libroEncontrado && id_libro !==0" class = libroEncontrado>
+                       <app-card [book_libro]="libroEncontrado" [esPar_color]="false" (eliminarX)="eliminarCard($event)"></app-card>                  
+                  </div>
+                  
+                  <p *ngIf="libroEncontrado && id_libro == 0"></p>
+                
+                  <ul nfIf="!id_libro || books.length > 0">
                     <p *ngIf="books.length == 0">NO EXISTEN LIBROS</p>
                     <li *ngFor="let book of books;let i = index; let esPar = even">
-                        <app-card [book_libro]="book" [esPar_color]="esPar" (eliminarX)="eliminarLibro($event)"></app-card>
-                      <!-- <app-card [book_libro]="book" [esPar_color]="esPar" (eliminarX)="eliminarLibro(i)"></app-card> -->
+                        <app-card [book_libro]="book" [esPar_color]="esPar" (eliminarX)="eliminarCard($event)"></app-card>
                     </li>
-                  </ul>
-                  <!--book:libro y esPar_color la igualo a iteradora book-->
+                  </ul>  -->
+                      
+            
             
             
             <!--<ul>

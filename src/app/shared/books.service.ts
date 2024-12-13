@@ -7,8 +7,7 @@ import { BooksComponent } from '../pages/books/books.component';
 })
 export class BooksService {
 
- id_book: any = 0; //iniciar con valor cero para la busqueda del libro por ID_book
- libro_encontrado: boolean = true ; //hemos encotrado el libro
+
 
 
   public books: Book[] = [
@@ -25,7 +24,7 @@ export class BooksService {
     return this.books;
  }
 
-  
+
   getOne(id_libro: number): Book | null {//coloco null para saber que e casillero esta a cero 
     for (let i = 0; i < this.books.length; i++) {
       if (this.books[i].id_book == id_libro) {
@@ -35,8 +34,9 @@ export class BooksService {
     return null; 
   }
   
+  
 
-  add(book: Book):void{
+  add(book: Book):void {
     this.books.push(book)
     alert("Libro agregado con exito: " + book.title);
 }
@@ -64,5 +64,4 @@ export class BooksService {
   }
 
 }
-
 

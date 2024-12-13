@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BooksService } from 'src/app/shared/books.service';
 import { Book } from 'src/models/book';
 
@@ -7,30 +7,89 @@ import { Book } from 'src/models/book';
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.css']
 })
-export class BooksComponent {
 
-  id_libro: number = 0;  
-  libroEncontrado: Book; 
 
+
+export class BooksComponent implements OnInit {
+
+  id_libro:any;  
+  libroEncontrado:Book |null=null
   books: Book[] = [];
 
-  constructor(public booksService: BooksService) { 
-    this.books = this.booksService.getAll(); 
+  constructor(public booksService: BooksService) {}
+
+  ngOnInit(): void {
+    this.books = this.booksService.getAll();
   }
 
- 
-  getOne(): void {
-    if (this.id_libro !== 0) {
-      this.libroEncontrado = this.booksService.getOne(this.id_libro);
-  
-      if (!this.libroEncontrado) {
-        alert("Libro no encontrado");
+  getOne(): void { 
+    if (this.id_libro == null || this.id_libro == 0 
+      || this.id_libro == undefined ||this.id_libro == "" )
+     { 
+      this.books = this.booksService.getAll();
+   
+    } else {
+      this.libroEncontrado = this.booksService.getOne(this.id_libro); 
+      if (!this.libroEncontrado) { 
+        alert("Libro no encontrado"); 
       }
     }
-  }
-  
     
   }
+  // id_libro = dato que el usuario introduce en el busccador
+  // id_book = codigo del libro una vez creado el mismo
+  // libroEncontrado = id_book que coincida con id_libro
+  // book_libro = se usa para pasar libroEncontrado a card.component..
+  //----a traves de <app-card>
+
+  eliminarCard(id_book: number):void{
+    if (this.libroEncontrado && this.libroEncontrado.id_book == id_book){
+    //si existe un libro buscado && libro buscado = al parametro id_book....
+    //..que he buscado en el 
+    //..recuadro de busqueda
+    this.libroEncontrado = null ;
+    // si se cumple la condicion el libro se elimina
+    }
+  }
+
+}
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+//  eliminarCard(book_libro: Book): void {
+//    if (this.libroEncontrado && this.libroEncontrado.id_book == book_libro.id_book){
+//      this.libroEncontrado = null; 
+//     } 
+//     let updatedBooks = []; 
+//     for (let i = 0; i < this.books.length; i++){
+//        if (this.books[i].id_book !== book_libro.id_book){
+//          updatedBooks.push(this.books[i])
+//         } 
+//       } 
+//       this.books = updatedBooks
+//      }
+//     }
+
+
+
+
+
+  // eliminarLibro(index: number) {
+  //   this.books.splice(index, 1);// eliminamos libro. Se elimina en indice indicado y solo un elemento. Asi funciona el splice()
+  //     this.books = this.books.filter(book => book.id_book != book.id_book);
+  // }
+  
     
 
   
@@ -104,12 +163,7 @@ export class BooksComponent {
 //     form.reset();  // Resetea todo el formulario a su estado inicial
 //   }
 
-//   eliminarLibro(index: number) {
-//     this.books.splice(index, 1);// eliminamos libro. Se elimina en indice indicado y solo un elemento. Asi funciona el splice()
-      // this.books = this.books.filter(book => book.id_book != id_book);
-// }
-
-
+ 
       
 
       

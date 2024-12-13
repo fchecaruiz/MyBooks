@@ -16,7 +16,7 @@ export class UpdateBookComponent {
 
  
   edit(): void {//no necesito pasar parámetros individuales, porque el objeto book ya tiene el dato....
-                // con ngModels los datos entran directamente a la vez que los input del formulario
+                // ......ya que con ngModels los datos entran directamente a la vez que los input del formulario
     
      if (this.updateBook.edit(this.book)) {
       alert("Libro actualizado!!!");

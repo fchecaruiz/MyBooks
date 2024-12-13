@@ -162,3 +162,11 @@ li {
    box-sizing: border-box;
 
 }
+.libroEncontrado{
+    border: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
