@@ -169,4 +169,8 @@ li {
     align-items: center;
     margin-top: 20px;
 }
-
+.buscar{
+    color: red;
+    font-size: 10px;
+    border-radius:5px;
+}

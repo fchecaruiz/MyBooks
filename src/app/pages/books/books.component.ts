@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { BooksService } from 'src/app/shared/books.service';
 import { Book } from 'src/models/book';
 
@@ -16,7 +17,7 @@ export class BooksComponent implements OnInit {
   libroEncontrado:Book |null=null
   books: Book[] = [];
 
-  constructor(public booksService: BooksService) {}
+  constructor(public booksService: BooksService, public toastr: ToastrService) {}
 
   ngOnInit(): void {
     this.books = this.booksService.getAll();
@@ -24,33 +25,65 @@ export class BooksComponent implements OnInit {
 
   getOne(): void { 
     if (this.id_libro == null || this.id_libro == 0 
-      || this.id_libro == undefined ||this.id_libro == "" )
-     { 
-      this.books = this.booksService.getAll();
-   
+      || this.id_libro == undefined || this.id_libro == "" ) { 
+      this.books = this.booksService.getAll()
+      this.libroEncontrado = null;
     } else {
       this.libroEncontrado = this.booksService.getOne(this.id_libro); 
       if (!this.libroEncontrado) { 
-        alert("Libro no encontrado"); 
+        // alert("Libro no encontrado"); 
+        this.toastr.info("Id del libro no encontrado")
       }
     }
-    
   }
+  
+
+  
+  // getOne(): void { 
+  //   if (this.id_libro == null || this.id_libro == 0 
+  //     || this.id_libro == undefined ||this.id_libro == "" )
+  //    { 
+  //     this.books = this.booksService.getAll();
+   
+  //   } else {
+  //     this.libroEncontrado = this.booksService.getOne(this.id_libro); 
+  //     if (!this.libroEncontrado) { 
+  //       alert("Libro no encontrado"); 
+  //     }
+  //   }
+    
+  // }
+
+  eliminarCard(id_book: number): void {
+    if (this.libroEncontrado && this.libroEncontrado.id_book === id_book) {
+      this.libroEncontrado = null;
+    }
+  
+    // Actualizar el array books eliminando el libro específico
+    this.books = this.books.filter(book => book.id_book !== id_book);
+  
+    // Volver a cargar toda la lista de libros
+    this.books = this.booksService.getAll();
+  }
+  
+
+
   // id_libro = dato que el usuario introduce en el busccador
   // id_book = codigo del libro una vez creado el mismo
   // libroEncontrado = id_book que coincida con id_libro
   // book_libro = se usa para pasar libroEncontrado a card.component..
   //----a traves de <app-card>
 
-  eliminarCard(id_book: number):void{
-    if (this.libroEncontrado && this.libroEncontrado.id_book == id_book){
-    //si existe un libro buscado && libro buscado = al parametro id_book....
-    //..que he buscado en el 
-    //..recuadro de busqueda
-    this.libroEncontrado = null ;
-    // si se cumple la condicion el libro se elimina
-    }
-  }
+
+  // eliminarCard(id_book: number):void{
+  //   if (this.libroEncontrado && this.libroEncontrado.id_book == id_book){
+  //   //si existe un libro buscado && libro buscado = al parametro id_book....
+  //   //..que he buscado en el 
+  //   //..recuadro de busqueda
+  //   this.libroEncontrado = null ;
+  //   // si se cumple la condicion el libro se elimina
+  //   }
+  // }
 
 }
 

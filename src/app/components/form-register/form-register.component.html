@@ -1,4 +1,88 @@
 
+
+
+<div class = "contenido">
+    <div class = "main">
+      <form class ="mb-4" [formGroup]="myForm">
+
+          <div class="form-group mt-4">
+            <label>Nombre</label>
+            <input type="text" class="form-control"  style="width: 250px;" formControlName="nombre"
+            [ngClass]="{'is-invalid': (myForm.get('nombre').dirty || myForm.get('nombre').touched) && !myForm.get('nombre').valid}">
+            <div *ngIf="!myForm.get('nombre').valid" class="invalid-feedback">
+              El nombre es necesario
+            </div>   
+          </div>
+          
+
+          <div class="form-group mt-4">
+            <label>Apellido</label>
+            <input type="text" class="form-control"  style="width: 250px;" formControlName="apellido"
+            [ngClass]="{'is-invalid': (myForm.get('apellido').dirty || myForm.get('apellido').touched) && !myForm.get('apellido').valid}">
+            <div *ngIf="!myForm.get('apellido').valid" class="invalid-feedback">
+              El apellido es necesario
+            </div>   
+          </div>
+        
+          <div class="form-group">
+            <label>Email</label>
+            <input  type="email" class="form-control"  style="width: 250px;" formControlName="email"
+            [ngClass]="{'is-invalid': (myForm.get('email').dirty || myForm.get('email').touched) && !myForm.get('email').valid}">
+            <div *ngIf="!myForm.get('email').valid" class="invalid-feedback">
+              <div *ngIf="myForm.get('email').errors.required">La dirección de email es obligatoria</div>
+              <div *ngIf="myForm.get('email').errors.email">Dirección email incorrecta</div>
+            </div>
+          </div>
+
+          <div class="form-group mt-4">
+            <label>Url</label>
+            <input type="url" class="form-control"  style="width: 250px;" formControlName="url"
+            [ngClass]="{'is-invalid': (myForm.get('url').dirty || myForm.get('url').touched) && !myForm.get('url').valid}">
+            <div *ngIf="!myForm.get('url').valid" class="invalid-feedback">
+              Por favor, escribe tu url
+            </div>   
+          </div>
+        
+          <div class="form-group">
+            <label>Password</label>
+            <input  type="password" class="form-control"  style="width: 250px;" formControlName="password"
+            [ngClass]="{'is-invalid': (myForm.get('password').dirty || myForm.get('password').touched) && !myForm.get('password').valid}">
+            <div *ngIf="!myForm.get('password').valid" class="invalid-feedback">
+              <div *ngIf="myForm.get('password').errors.required">La clave es obligatoria</div>
+              <div *ngIf="myForm.get('password').errors.minlength">La clave debe tener al menos 8 caracteres</div>    
+            </div>
+          </div>
+   
+          <div class="form-group">
+            <label>Repetir Password</label>
+            <input  type="password" class="form-control"  style="width: 250px;" formControlName="password2"
+            [ngClass]="{'is-invalid': (myForm.get('password2').dirty || myForm.get('password2').touched) && !myForm.get('password2').valid}">
+            <div *ngIf="!myForm.get('password2').valid" class="invalid-feedback">
+              <div *ngIf="myForm.get('password2').errors.required">La clave es obligatoria</div>
+              <div *ngIf="!myForm.get('password2').errors.required && 
+                          myForm.get('password2').errors.matchPassword">Las claves no coinciden</div> 
+            </div>
+          </div>
+
+          
+        
+          <div class="form-group">
+          <button class="btn btn-danger btn-block" (click)="register()" [disabled]="myForm.invalid">Submit</button>
+          </div>
+        </form>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+<!-- 
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,42 +95,42 @@
     
 
     <div class="form-container"> 
-       
-        <form>
-            <p class = "titulo">FORMULARIO DE REGISTRO</p>
+
+        <form [formGroup]="formRegistro">
+            <p class = "titulo">FORMULARIO DE REGISTRO</p> 
             <div>
-                <label for="nombre"></label>
-                <input type="text" id="nombre" placeholder="Nombre" required>
+                <label>Nombre</label>
+                <input type="text" placeholder="Nombre" formControlname="nombre">
             </div>
             <br>
             <div>
-                <label for="apellidos"></label>
-                <input type="text" id="apellidos" placeholder="Apellidos" required>
+                <label>Apellidos</label>
+                <input type="text" placeholder="Apellidos"  formControlname="apellidos">
             </div>
             <br>
             <div>
-                <label for="inputUrl"></label>
-                <input type="url" id="inputUrl" name="url" placeholder="Escribe la URL" required>
+                <label>Url</label>
+                <input type="url" name="url" placeholder="Escribe la URL"  formControlname="url">
             </div>
             <br>
             <div>
-                <label for="emailInput"></label>
-                <input type="email" id="emailInput" placeholder="Escribe tu email" required>
+                <label>Email</label>
+                <input type="email" placeholder="Escribe tu email"  formControlname="email" >
             </div>
             <br>
             <div>
-                <label for="inputPassword"></label>
-                <input type="password" id="inputPassword" placeholder="Escribe tu contraseña" required>
+                <label>Password</label>
+                <input type="password" placeholder="Escribe tu contraseña"  formControlname="password">
             </div>
             <br>
 
             <div>
-                <label for="inputPasswordRepeat"></label>
-                <input type="password" id="inputPasswordRepeat" placeholder="Repite tu contraseña" required>
+                <label>Password2</label>
+                <input type="password2" placeholder="Repite tu contraseña"  formControlname="password2">
             </div>
 
             <div class = "boton2">
-                <button class = "boton" type="submit">Registrate</button>
+                <button class = "boton" (click)="register()" [disabled]="formRegistro.invalid">Submit</button>
             </div>
            
         </form>
@@ -54,6 +138,6 @@
     
 </body>
 </html>
-
+ -->
 
 

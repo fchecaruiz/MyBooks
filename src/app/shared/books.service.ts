@@ -38,7 +38,7 @@ export class BooksService {
 
   add(book: Book):void {
     this.books.push(book)
-    alert("Libro agregado con exito: " + book.title);
+    // alert("Libro agregado con exito: " + book.title);
 }
 
 

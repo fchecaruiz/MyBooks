@@ -10,8 +10,9 @@
     <div class="caja_principal"> 
         <div class="buscador">
           <input class="recuadroBuscador" type="number" id="buscador" placeholder="Buscar libro" 
-                 [(ngModel)]="id_libro" (keyup.enter)="getOne()">
-        </div>
+          [(ngModel)]="id_libro" (keyup.enter)="getOne()">
+          <button (click)="getOne()">Buscar Libro</button>
+          </div>
       
         <div *ngIf="libroEncontrado && id_libro !== 0" class="libroEncontrado">
           <app-card [book_libro]="libroEncontrado" [esPar_color]="false" (eliminarX)="eliminarCard($event)"></app-card>                  

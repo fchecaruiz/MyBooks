@@ -1,22 +1,28 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documento</title>
-</head>
-<body>
-    <nav class="navbar"> 
-        <a class="nav-MyBooks" routerLink="/home">MyBooks</a>
-        <div class="nav-links"> 
-            <a class="nav-Home" aria-current="page" routerLink="/home">Home</a> 
-            <a class="nav-register" routerLink="/register">Registro</a> 
-            <a class = "nav-profile" routerLink = "/profile">Perfil</a>
-            <a class = "nav-books" routerLink = "/books">Books</a>
-            <a class = "nav-addBook" routerLink = "/addBook">Añadir Libro</a>
-            <a class = "nav-updateBook" routerLink = "/updateBook">Actualizar Libro</a>
-        </div> 
-    </nav> 
-</body>
-</html>
 
+
+  <!--APLICO el selector  [routerLinkActive]="active" a cada elemento del header, y le añado un css-->
+  <!-- pagina oficial de Angular   <a routerLink="/user/bob" routerLinkActive="active-link">Bob</a>  -->
+
+ <!DOCTYPE html>
+ <html lang="es">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Documento</title>
+ </head>
+ <body>
+     <nav class="navbar"> 
+         <a class="nav-MyBooks" routerLink="/home" routerLinkActive="active-link">MyBooks</a>
+         <div class="nav-links"> 
+             <a class="nav-Home" routerLink="/home" routerLinkActive="active-link">Home</a> 
+             <a class="nav-register" routerLink="/register" routerLinkActive="active-link">Registro</a> 
+             <a class="nav-profile" routerLink="/profile" routerLinkActive="active-link">Perfil</a>
+             <a class="nav-books" routerLink="/books" routerLinkActive="active-link">Books</a>
+             <a class="nav-addBook" routerLink="/addBook" routerLinkActive="active-link">Añadir Libro</a>
+             <a class="nav-updateBook" routerLink="/updateBook" routerLinkActive="active-link">Actualizar Libro</a>
+             <a class="nav-login" routerLink="/login" routerLinkActive="active-link">Login</a>
+         </div> 
+     </nav> 
+ </body>
+ </html>
+ 

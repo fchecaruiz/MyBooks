@@ -15,7 +15,13 @@ import { AddBookComponent } from './pages/add-book/add-book.component';
 import { UpdateBookComponent } from './pages/pages/update-book/update-book.component';
 import { BooksService } from './shared/books.service';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
+import { FormLoginComponent } from './components/form-login/form-login.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -37,15 +43,17 @@ import { FormsModule } from '@angular/forms';
     CardComponent,
     AddBookComponent,
     UpdateBookComponent,
-   
-   
-    
+    LoginComponent,
+    FormLoginComponent,
   ],
   imports: [
+    ReactiveFormsModule,
     RouterModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    BrowserAnimationsModule, 
+    ToastrModule.forRoot(),
   ],
   providers: [BooksService],
   bootstrap: [AppComponent]

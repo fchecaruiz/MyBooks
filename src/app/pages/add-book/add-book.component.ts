@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { BooksService } from 'src/app/shared/books.service';
 import { Book } from 'src/models/book';
 
@@ -10,7 +11,7 @@ import { Book } from 'src/models/book';
 })
 export class AddBookComponent {
 
-  constructor(public addLibro:BooksService){
+  constructor(public addLibro:BooksService, public toastr:ToastrService){
 
 }
 
@@ -29,11 +30,14 @@ add(title: string, cover_class: string, author: string, price: number, photo: st
     );
   
   this.addLibro.add(nuevoLibro);
-  alert("Libro añadido correctamente");
+  this.toastr.info("Libro añadido correctamente!!");
+  // alert("Libro añadido correctamente");
+  
 }  else{
-  alert ("Completa todos los datos del formulario")
+//   alert ("Completa todos los datos del formulario");
+// }
+     this.toastr.info("Completa todos los datos del formulario");
 }
-
 }
 }
 
